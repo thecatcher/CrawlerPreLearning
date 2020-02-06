@@ -1,5 +1,4 @@
 import re
-
 import requests
 
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
@@ -13,7 +12,8 @@ pattern = re.compile(
 print("compile pattern finished!")
 print(pattern)
 # result = re.search(pattern,content)
-results = re.findall(pattern, content)
+results = re.findall(pattern, content[95000:105000])
+print(results)
 for result in results:
     url,name,author,date = result
     author= re.sub('\s','',author)
